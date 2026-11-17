@@ -32,6 +32,7 @@ jobs:
         with:
           scheme: small
           run: |
+            tlmgr update --self
             tlmgr install cyrillic cyrillic-bin babel-russian hyphen-russian lh
             latexmk -pdf main.tex
 
