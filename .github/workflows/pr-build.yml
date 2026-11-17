@@ -28,11 +28,12 @@ jobs:
           fetch-depth: 0
 
       - name: Setup TeX Live and compile
-        uses: xu-cheng/texlive-action@v2
+        uses: xu-cheng/latex-action@v3
         with:
-          scheme: small          # или basic, full
-          run: |
-            latexmk -pdf main.tex
+          root_file: main.tex
+          docker_image: texlive/texlive:latest-small
+          pre_compile: |
+            tlmgr install cyrillic cyrillic-bin babel-russian hyphen-russian ec
 
       - name: Commit PDF to PR branch
         run: |
