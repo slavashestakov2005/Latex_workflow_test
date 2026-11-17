@@ -33,7 +33,7 @@ jobs:
           root_file: main.tex
           docker_image: texlive/texlive:latest-small
           pre_compile: |
-            tlmgr install cyrillic cyrillic-bin babel-russian hyphen-russian ec
+            tlmgr install cyrillic cyrillic-bin babel-russian hyphen-russian ec lh
 
       - name: Commit PDF to PR branch
         run: |
